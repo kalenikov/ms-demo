@@ -1,3 +1,6 @@
 rootProject.name = 'ms-demo'
 includeBuild 'eu-server'
+includeBuild 'eu-client'
+includeBuild 'api-gateway'
+//includeBuild 'eu-client-2'
 
