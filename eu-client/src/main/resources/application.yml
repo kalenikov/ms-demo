@@ -1,0 +1,13 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: eu-client
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8081/eureka
