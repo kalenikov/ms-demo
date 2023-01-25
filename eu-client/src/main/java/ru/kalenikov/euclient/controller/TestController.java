@@ -6,19 +6,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/eu1")
 public class TestController {
 
     @Value("${eureka.instance.instance-id}")
     private String id;
 
-    @GetMapping("/test")
+    @GetMapping("/id")
     public String test() {
-        return id;
+        return String.format("%s -- %s", "id", id);
     }
 
-    @GetMapping("/")
+    @GetMapping
     public String index() {
-        return String.format("%s_%s", id, "index");
+        return String.format("%s -- %s", "index", id);
+    }
+
+    @GetMapping("/value")
+    public String value(@Value("${kalenikov.some.value}") String value) {
+        return String.format("%s -- %s", "value", value);
     }
 }
