@@ -3,4 +3,5 @@ includeBuild 'eu-server'
 includeBuild 'eu-client'
 includeBuild 'api-gateway'
 includeBuild 'eu-client-2'
+includeBuild 'config-server'
 
