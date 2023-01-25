@@ -1,0 +1,17 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: config-server
+
+  cloud:
+    config:
+      server:
+        git:
+#          uri: https://github.com/kalenikov/ms-demo-config.git
+          uri: file://c:/temp/java/ms-demo-temp
+#          clone-on-start: true
+#          basedir: file://c:/temp/java/ms-demo-temp
+#          username: skalenikov
+#          password: 123
+#          default-label: main
