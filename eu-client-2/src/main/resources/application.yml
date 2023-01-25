@@ -1,14 +1,5 @@
-server:
-  port: 0
-
 spring:
-  application:
-    name: eu-client-2
-
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-
+    application:
+        name: eu2
+    config:
+        import: optional:configserver:http://localhost:8888

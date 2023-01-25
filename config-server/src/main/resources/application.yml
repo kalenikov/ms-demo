@@ -8,8 +8,8 @@ spring:
     config:
       server:
         git:
+          uri: file://C:/temp/java/ms-demo/config-store
 #          uri: https://github.com/kalenikov/ms-demo-config.git
-          uri: file://c:/temp/java/ms-demo-temp
 #          clone-on-start: true
 #          basedir: file://c:/temp/java/ms-demo-temp
 #          username: skalenikov
