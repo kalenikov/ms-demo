@@ -14,19 +14,24 @@ spring:
           enabled: true
           lower-case-service-id: true
       routes:
-        - id: test
+#        - id: test1
+#          predicates:
+#            - Path=/main/test
+#            - Method=GET
+#          uri: lb://eu-client
+#        - id: test2
+#          filters:
+#            - StripPrefix=1
+#          predicates:
+#            - Path=/u2/new/name
+#            - Method=GET
+#          uri: lb://eu-client-2
+        - id: test3
+          filters:
+            - StripPrefix=1
+            - PrefixPath=/eu1
           predicates:
-            - Path=/main/test
-            - Method=GET
-          uri: lb://eu-client
-        - id: name
-          predicates:
-            - Path=/new/name
-            - Method=GET
-          uri: lb://eu-client-2
-        - id: test2
-          predicates:
-            - Path=/eu
+            - Path=/test/**
             - Method=GET
           uri: lb://eu-client
 management:
