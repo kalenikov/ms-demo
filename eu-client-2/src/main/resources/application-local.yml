@@ -1,0 +1,31 @@
+server:
+  port: 22222
+
+spring:
+  rabbitmq:
+    host: 192.168.1.100
+    port: 5672
+    username: rmuser
+    password: rmpassword
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: test-channel
+          group: test-group
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          stream:
+            messaging: trace
+eureka:
+  client:
+    enabled: false
+  instance:
+    instance-id: local-instance
+
+instance:
+  title: 'this eu2 client'

@@ -1,0 +1,37 @@
+server:
+    port: 11111
+
+spring:
+  rabbitmq:
+    host: 192.168.1.100
+    port: 5672
+    username: rmuser
+    password: rmpassword
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: test-channel
+          group: test-group
+      rabbit:
+        bindings:
+          input:
+            consumer:
+              auto-bind-dlq: true
+
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          stream:
+            messaging: trace
+eureka:
+  client:
+    enabled: false
+  instance:
+    instance-id: local-instance
+
+instance:
+  title: 'this eu1 client'

@@ -1,5 +1,21 @@
 spring:
-    application:
-        name: eu2
-    config:
-        import: optional:configserver:http://localhost:8888
+  application:
+    name: eu2
+  config:
+    import: optional:configserver:http://localhost:8888
+  profiles:
+    active: rabbit
+
+  cloud:
+    stream:
+      bindings:
+        outChannel:
+          destination: test-channel
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          stream:
+            messaging: trace
